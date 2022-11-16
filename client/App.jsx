@@ -5,7 +5,6 @@ import ListItemCard from './components/ListItemCard'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import ActiveListCard from './components/PendingListCard'
 import './styles.css'
-import {StyledDivider, StyledTab} from "./style";
 
 function App(props) {
 	const types = ['active', 'complete']

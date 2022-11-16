@@ -5,7 +5,7 @@ const { MongoClient, ObjectId } = require('mongodb')
 const { MONGO_USER = '', MONGO_PASS = '', MONGO_HOST = 'localhost', MONGO_PORT = '27017' } = process.env
 const MONGO_URL = `mongodb://${MONGO_USER}:${MONGO_PASS}@ac-jxxdioi-shard-00-00.ngo6jnw.mongodb.net:27017,ac-jxxdioi-shard-00-01.ngo6jnw.mongodb.net:27017,ac-jxxdioi-shard-00-02.ngo6jnw.mongodb.net:27017/?ssl=true&replicaSet=atlas-p4hvd6-shard-0&authSource=admin&retryWrites=true&w=majority`
 
-const APP_PORT = process.env.PORT || 4000
+const APP_PORT = process.env.PORT || 4001
 const app = express()
 
 app.use(bodyParser.json({ extended: true }))
