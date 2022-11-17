@@ -11,7 +11,45 @@ export const StyledButton = styled.button`
     color: #fdb44b;
   }
   
-
+  /** Variants */
+  ${(props => {
+    switch(props.variant) {
+      case "success":
+        return css`
+          color: green;
+        `
+      break;
+      case "danger":
+        return css`
+          color: red;
+        `
+        break;
+      default:
+        return css`
+          color: black;
+        `
+    }
+  })}
+  
+/** Using theme - ThemeProvider */
+    ${(props => {
+      switch(props.variant) {
+        case "success":
+          return css`
+            color: ${props.theme.colors.success};
+          `
+          break;
+        case "danger":
+          return css`
+            color: ${props.theme.colors.danger};
+          `
+          break;
+        default:
+          return css`
+            primary: ${props.theme.colors.default};
+          `
+      }
+    })}
   /** Some more styling */
   //font-size: 1em;
   //padding: 0.25em 3em;
@@ -30,54 +68,13 @@ export const StyledButton = styled.button`
 //   color: green;
 // `
 
-/** Variants */
-// ${(props => {
-//   switch(props.variant) {
-//     case "success":
-//       return css`
-//         color: green;
-//       `
-//     break;
-//     case "danger":
-//       return css`
-//         color: red;
-//       `
-//       break;
-//     default:
-//       return css`
-//         color: black;
-//       `
+// export const theme = {
+//   colors: {
+//     success: "green",
+//     danger: "red",
+//     default: "black"
 //   }
-// })}
-
-export const theme = {
-  colors: {
-    success: "green",
-    danger: "red",
-    default: "black"
-  }
-}
-
-/** Using theme - ThemeProvider */
-    // ${(props => {
-    //   switch(props.variant) {
-    //     case "success":
-    //       return css`
-    //         color: ${props.theme.colors.success};
-    //       `
-    //       break;
-    //     case "danger":
-    //       return css`
-    //         color: ${props.theme.colors.danger};
-    //       `
-    //       break;
-    //     default:
-    //       return css`
-    //         primary: ${props.theme.colors.default};
-    //       `
-    //   }
-    // })}
-
+// }
 
 export const StyledTab = styled(Tab)`
   cursor: pointer;
@@ -114,9 +111,9 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledContainer = styled.div`
-  margin: 0 auto;
-  width: 60%;
-  @media (max-width: 768px) {
-    width: 100%;
+  width: 100%;
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 50%;
   }
 `;
